@@ -1,0 +1,29 @@
+# action.yml
+name: 'Webhug Action'
+description: 'Triggers a Webhug 🤗'
+branding:
+  icon: 'send'
+  color: 'yellow'
+inputs:
+  endpoint:
+    description: 'URL to the Webhug endpoint'
+    required: true
+  secret:
+    description: 'Secret to sign the request using github webhook authentication scheme'
+    required: true
+  ctype:
+    description: 'The content-type header for the request'
+    required: false
+    default: 'application/json'
+  payload:
+    description: 'The payload which will be posted to the endpoint'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.endpoint }}
+    - ${{ inputs.secret }}
+    - ${{ inputs.ctype }}
+    - ${{ inputs.payload }}
