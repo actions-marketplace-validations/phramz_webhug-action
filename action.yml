@@ -1,6 +1,6 @@
 # action.yml
-name: 'Webhug Action'
-description: 'Triggers a Webhug 🤗'
+name: 'Webhug Action 🤗'
+description: 'Generic webhook trigger'
 branding:
   icon: 'send'
   color: 'yellow'
